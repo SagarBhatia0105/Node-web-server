@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 3000
+
 var apt = express();
 
 hbs.registerPartials(__dirname + '/views/partials')
@@ -63,6 +65,6 @@ apt.get('/bad', (req, res) => {
 
 });
 
-apt.listen(3000, () => {
-  console.log('Server is up on port 3000');
+apt.listen(port, () => {
+  console.log('Server is up on port ',port);
 });
