@@ -24,11 +24,11 @@ apt.use((req, res, next) => {
   next();
 });
 
-apt.use((req, res, next) => {
-  res.render('maintenance.hbs', {
-    pageTitle : 'Maintenance Page'
-  })
-});
+// apt.use((req, res, next) => {
+//   res.render('maintenance.hbs', {
+//     pageTitle : 'Maintenance Page'
+//   })
+// });
 
 apt.use(express.static(__dirname + '/public'));
 
@@ -53,6 +53,15 @@ apt.get('/about', (req, res) =>{
 
   res.render('about.hbs', {
     pageTitle : 'About Page',
+  });
+
+});
+
+apt.get('/projects', (req, res) => {
+
+  res.render('projects.hbs', {
+    pageTitle : 'Projects page',
+    welcomeMessage : 'The page is portfolio for my projects'
   });
 
 });
